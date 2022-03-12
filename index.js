@@ -60,7 +60,9 @@ app.post('/api/notes', (request, response) => {
 
   const newNote = {
     id: maxId + 1,
-    content: note.content
+    content: note.content,
+    date: new Date().toISOString(),
+    important: typeof note.important !== 'undefined' ? note.important : false
   }
 
   notes = [...notes, newNote]
@@ -73,7 +75,7 @@ app.use((request, response) => {
   })
 })
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
