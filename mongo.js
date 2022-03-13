@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const connectionString = process.env.MONGO_DB_URI || MONGO_DB_URI_HEROKU
+const connectionString = process.env.MONGO_DB_URI
 
 // Conexión a MongoDB
 mongoose.connect(connectionString)
