@@ -1,0 +1,8 @@
+PUT http://localhost:3001/api/notes/622df0d8a960f747edea3936
+Content-Type: application/json
+
+
+{
+    "content": "Midudev en YouTube y Twitch y dale like al video",
+    "important": true
+}
