@@ -7,7 +7,7 @@
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "start": "cross-env NODE_ENV=production node index.js",
     "lint": "npx standard --fix",
-    "test": "cross-env NODE_ENV=test jest --verbose --silent --detectOpenHandles",
+    "test": "cross-env NODE_ENV=test jest --verbose --silent tests/notes.test.js",
     "test:watch": "npm run test -- --watch"
   },
   "author": "JuanMG22",
