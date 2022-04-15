@@ -7,7 +7,7 @@
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "start": "cross-env NODE_ENV=production node index.js",
     "lint": "npx standard --fix",
-    "test": "cross-env NODE_ENV=test jest --verbose --silent tests/notes.test.js",
+    "test": "cross-env NODE_ENV=test PORT=5001 jest --verbose --silent tests/users.test.js",
     "test:watch": "npm run test -- --watch"
   },
   "author": "JuanMG22",
@@ -19,11 +19,16 @@
     "supertest": "^6.2.2"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cors": "2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "16.0.0",
     "express": "4.17.3",
-    "mongoose": "6.2.6"
+    "install": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "6.2.6",
+    "mongoose-unique-validator": "^3.0.0",
+    "npm": "^8.7.0"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json",

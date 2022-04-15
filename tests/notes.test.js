@@ -13,19 +13,19 @@ beforeEach(async () => {
 })
 
 describe('GET all notes', () => {
-  test('notes are returned as json', async () => {
+  test('Notes are returned as json', async () => {
     await api
       .get('/api/notes')
       .expect(200)
       .expect('Content-Type', /application\/json/)
   })
 
-  test('there are two notes', async () => {
+  test('There are two notes', async () => {
     const response = await api.get('/api/notes')
     expect(response.body).toHaveLength(initialNotes.length)
   })
 
-  test('the first note is about midudev', async () => {
+  test('The first note is about midudev', async () => {
     const {
       contents
     } = await getAllContentFromNotes()
@@ -34,8 +34,8 @@ describe('GET all notes', () => {
   })
 })
 
-describe('create a note', () => {
-  test('is possible with a valid note', async () => {
+describe('CREATE a note', () => {
+  test('Is possible with a valid note', async () => {
     const newNote = {
       content: 'Proximamente async/await',
       important: true
@@ -53,7 +53,7 @@ describe('create a note', () => {
     expect(contents).toContain(newNote.content)
   })
 
-  test('is not possible with an invalid note', async () => {
+  test('Is not possible with an invalid note', async () => {
     const newNote = {
       important: true
     }
@@ -69,29 +69,31 @@ describe('create a note', () => {
   })
 })
 
-test('A note can be deleted', async () => {
-  const { response: firstResponse } = await getAllContentFromNotes()
-  const { body: notes } = firstResponse
-  const noteToDelete = notes[0]
+describe('DELETE a note', () => {
+  test('A note can be deleted', async () => {
+    const { response: firstResponse } = await getAllContentFromNotes()
+    const { body: notes } = firstResponse
+    const noteToDelete = notes[0]
 
-  await api
-    .delete(`/api/notes/${noteToDelete.id}`)
-    .expect(204)
+    await api
+      .delete(`/api/notes/${noteToDelete.id}`)
+      .expect(204)
 
-  const { contents, response: secondResponse } = await getAllContentFromNotes()
+    const { contents, response: secondResponse } = await getAllContentFromNotes()
 
-  expect(secondResponse.body).toHaveLength(initialNotes.length - 1)
-  expect(contents).not.toContain(noteToDelete.content)
-})
+    expect(secondResponse.body).toHaveLength(initialNotes.length - 1)
+    expect(contents).not.toContain(noteToDelete.content)
+  })
 
-test('A note that do not exist cannot be deleted', async () => {
-  await api
-    .delete('/api/notes/1233')
-    .expect(400)
+  test('A note that do not exist cannot be deleted', async () => {
+    await api
+      .delete('/api/notes/1233')
+      .expect(400)
 
-  const { response } = await getAllContentFromNotes()
+    const { response } = await getAllContentFromNotes()
 
-  expect(response.body).toHaveLength(initialNotes.length)
+    expect(response.body).toHaveLength(initialNotes.length)
+  })
 })
 
 afterAll(() => {

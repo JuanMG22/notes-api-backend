@@ -9,7 +9,7 @@ const connectionString = NODE_ENV === 'test'
 // Conexión a MongoDB
 mongoose.connect(connectionString)
   .then(() => {
-    console.log('database connected')
+    console.log('Database connected')
   })
   .catch((err) => {
     console.error(err)
