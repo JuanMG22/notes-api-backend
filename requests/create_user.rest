@@ -1,9 +1,9 @@
-POST http://localhost:4001/api/register
+POST http://localhost:4001/api/users
 Content-Type: application/json
 
 
 {
-    "name": "Juan Manuel",
-    "email": "juan.m-gonzalez@outlook.com",
-    "password": "tecladoroto"
+    "name": "Juan",
+    "email": "correo@gmail.com",
+    "password": "contraseña123"
 }

@@ -1,8 +1,9 @@
-PUT http://localhost:4001/api/notes/622df0d8a960f747edea3936
+PUT http://localhost:4001/api/notes/625b8545f336c1461f1a453e
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNvcnJlb0BnbWFpbC5jb20iLCJpZCI6IjYyNWI4NTE5ZjMzNmMxNDYxZjFhNDUzOCIsImlhdCI6MTY1MDE2NTA0NCwiZXhwIjoxNjUwNzY5ODQ0fQ.A7oupz_6hjEfYzbxrSQy9P72UuBpNooSxeVRbnVbzY8
 
 
 {
-    "content": "Midudev en YouTube y Twitch y dale like al video",
+    "content": "Prueba de modificar nota",
     "important": true
 }

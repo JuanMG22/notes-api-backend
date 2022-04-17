@@ -1,8 +1,8 @@
 POST http://localhost:4001/api/notes
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNvcnJlb0BnbWFpbC5jb20iLCJpZCI6IjYyNWI4NTE5ZjMzNmMxNDYxZjFhNDUzOCIsImlhdCI6MTY1MDE2NTA0NCwiZXhwIjoxNjUwNzY5ODQ0fQ.A7oupz_6hjEfYzbxrSQy9P72UuBpNooSxeVRbnVbzY8
 
 {
-    "content": "Nueva Nota",
-    "important": true
+  "content": "Utilizando el middleware del user extractor",
+  "important": true
 }

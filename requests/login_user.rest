@@ -3,6 +3,6 @@ Content-Type: application/json
 
 
 {
-    "email": "juan.m-gonzalez@outlook.com",
-    "password": "tecladoroto"
+    "email": "correo@gmail.com",
+    "password": "contraseña123"
 }
