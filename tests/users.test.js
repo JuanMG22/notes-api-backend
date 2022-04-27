@@ -46,8 +46,8 @@ describe('CREATE a new user', () => {
       .expect(401)
       .expect('Content-Type', /application\/json/)
 
-    const { errors } = result.body
-    expect(errors.email.message).toContain('expected `email` to be unique.')
+    const { error } = result.body
+    expect(error).toContain('user already exists')
 
     const usersAtEnd = await getUsers()
     expect(usersAtEnd).toHaveLength(usersAtStart.length)
