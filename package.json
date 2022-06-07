@@ -27,7 +27,6 @@
     "install": "^0.13.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "6.2.6",
-    "mongoose-unique-validator": "^3.0.0",
     "npm": "^8.7.0"
   },
   "eslintConfig": {
